@@ -3,7 +3,7 @@ import { Badge, Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { CartContext } from "../context/Context";
 import CartPro from "./CartPro";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const {
