@@ -41,6 +41,14 @@ const Product = () => {
 
   const prodArr = (
     <div className="container">
+      <div
+        className="bg-light d-flex justify-content-center p-2 font-monospace"
+        style={{ height: "5rem", width: "100%" }}
+      >
+        <h1 style={{ margin: "auto", fontSize: "30px", color: "black" }}>
+          Music
+        </h1>
+      </div>
       <Row xs={1} md={4} className="g-4">
         {productsArr.map((item) => (
           <Col key={item.id}>

@@ -3,6 +3,7 @@ import { Badge, Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { CartContext } from "../context/Context";
 import CartPro from "./CartPro";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const {
@@ -14,9 +15,9 @@ const Header = () => {
       <Navbar style={{ backgroundColor: "#e6e5e5" }} data-bs-theme="light">
         <Container className="d-flex justify-content-around font-weight-bolder">
           <Nav style={{ fontSize: "1.2rem" }}>
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#store">Store</Nav.Link>
-            <Nav.Link href="#about">About Us</Nav.Link>
+            <NavLink to="/header">Home</NavLink>
+            <NavLink to="/store">Store</NavLink>
+            <NavLink to="/AboutUs">About Us</NavLink>
           </Nav>
           <Dropdown>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
@@ -37,14 +38,6 @@ const Header = () => {
       >
         <h1 style={{ margin: "auto", fontSize: "60px", color: "white" }}>
           The Generics
-        </h1>
-      </div>
-      <div
-        className="bg-light d-flex justify-content-center p-2 font-monospace"
-        style={{ height: "5rem", width: "100%" }}
-      >
-        <h1 style={{ margin: "auto", fontSize: "30px", color: "black" }}>
-          Music
         </h1>
       </div>
     </>
