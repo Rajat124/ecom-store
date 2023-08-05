@@ -9,7 +9,7 @@ export const cartReducer = (state, action) => {
         (ele) => ele.id === action.payload.id
       );
 
-      if (existingItem == -1) {
+      if (existingItem === -1) {
         return {
           totalValue: state.totalValue + Number(action.payload.price),
           cart: [...state.cart, { ...action.payload, qty: 1 }],

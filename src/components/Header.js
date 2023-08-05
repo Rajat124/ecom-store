@@ -15,7 +15,7 @@ const Header = () => {
       <Navbar style={{ backgroundColor: "#e6e5e5" }} data-bs-theme="light">
         <Container className="d-flex justify-content-around font-weight-bolder">
           <Nav style={{ fontSize: "1.2rem" }}>
-            <NavLink to="/header">Home</NavLink>
+            <NavLink to="/home">Home</NavLink>
             <NavLink to="/store">Store</NavLink>
             <NavLink to="/AboutUs">About Us</NavLink>
           </Nav>
