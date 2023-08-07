@@ -17,6 +17,7 @@ const Header = () => {
           <Nav style={{ fontSize: "1.2rem" }}>
             <NavLink to="/home">Home</NavLink>
             <NavLink to="/store">Store</NavLink>
+            <NavLink to="/contactus">Contact US </NavLink>
             <NavLink to="/AboutUs">About Us</NavLink>
           </Nav>
           <Dropdown>
