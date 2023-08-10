@@ -10,7 +10,7 @@ import {
 import { FaShoppingCart } from "react-icons/fa";
 import { CartContext } from "../context/Context";
 import CartPro from "./CartPro";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { AuthContext } from "./context/Context";
 
 const Header = () => {
@@ -20,6 +20,8 @@ const Header = () => {
 
   const authCtx = AuthContext();
   console.log(authCtx);
+
+  const history = useHistory();
 
   return (
     <>
@@ -43,7 +45,15 @@ const Header = () => {
               <Button style={{ margin: "0px 0px 0px 6rem" }}>Login</Button>
             </NavLink>
           ) : (
-            <Button style={{ margin: "0px 0px 0px 6rem" }}>LogOut</Button>
+            <Button
+              style={{ margin: "0px 0px 0px 6rem" }}
+              onClick={() => {
+                authCtx.logout();
+                history.replace("/");
+              }}
+            >
+              LogOut
+            </Button>
           )}
 
           <Dropdown style={{ margin: "0px 4rem 0px 1rem" }}>

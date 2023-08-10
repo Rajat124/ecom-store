@@ -26,7 +26,8 @@ function App() {
           <Home />
         </Route>
         <Route path="/product">
-          <Product />
+          {authCtx.isUserLoggedIn && <Product />}
+          {!authCtx.isUserLoggedIn && <Redirect to="/auth" />}
         </Route>
         <Route path="/contactUs">
           <ContactUs />
