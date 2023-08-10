@@ -1,9 +1,12 @@
 import React from "react";
 import { Row, Button, Card, Col } from "react-bootstrap";
-import { CartContext } from "../context/Context";
+import { CartContext } from "../../context/Context";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/Context";
 
 const Product = () => {
   const { dispatch } = CartContext();
+  // const authCtx = AuthContext();
 
   const productsArr = [
     {
@@ -53,7 +56,9 @@ const Product = () => {
         {productsArr.map((item) => (
           <Col key={item.id}>
             <Card>
-              <Card.Img variant="top" src={item.imageUrl} />
+              <Link to={`/product/${item.id}`}>
+                <Card.Img variant="top" src={item.imageUrl} />
+              </Link>
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Row md={2}>

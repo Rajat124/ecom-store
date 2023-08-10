@@ -16,7 +16,7 @@ const CartPro = () => {
     dispatch,
   } = CartContext();
 
-  console.log(cart);
+  // console.log(cart);
 
   // useEffect(() => {
   //   const totalCartValue = cart.reduce(

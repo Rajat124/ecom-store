@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Button, Col, ListGroup, Row } from "react-bootstrap";
 import { AiFillPlayCircle } from "react-icons/ai";
 
 const Home = () => {
@@ -38,10 +38,15 @@ const Home = () => {
 
   return (
     <div>
-      <div className="bg-dark " style={{ height: "7rem", width: "100%" }}>
+      <div className="bg-dark " style={{ height: "10rem", width: "100%" }}>
         <Row md={2} className="justify-content-md-center">
           <Button
-            style={{ width: 300, fontSize: "20px", background: "transparent" }}
+            style={{
+              margin: "2rem 0 5px 5px",
+              width: 300,
+              fontSize: "20px",
+              background: "transparent",
+            }}
           >
             Get on Latest Album
           </Button>

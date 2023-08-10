@@ -1,15 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Header from "./Header";
-import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 
-const Root = () => {
+const Root = (props) => {
   return (
-    <div>
+    <Fragment>
       <Header />
-      <Outlet />
+      <main>{props.children}</main>
       <Footer />
-    </div>
+    </Fragment>
   );
 };
 

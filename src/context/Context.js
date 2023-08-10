@@ -12,7 +12,6 @@ const Context = (props) => {
     totalValue: 0,
     cart: [],
   });
-  console.log(state.cart);
 
   return (
     <cart.Provider value={{ state, dispatch }}>{props.children}</cart.Provider>

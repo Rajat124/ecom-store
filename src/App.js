@@ -1,29 +1,40 @@
 import React from "react";
 import Root from "./components/Root";
-import Product from "./components/Product";
-// import { CartContext } from "./context/Context";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AboutUs from "./components/AboutUs";
-import Home from "./components/Home";
-import ContactUs from "./components/ContactUs";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    children: [
-      { path: "/home", element: <Home /> },
-      { path: "/store", element: <Product /> },
-      { path: "/contactus", element: <ContactUs /> },
-      { path: "/AboutUs", element: <AboutUs /> },
-    ],
-  },
-]);
+import Product from "./components/pages/Product";
+import AboutUs from "./components/pages/AboutUs";
+import Home from "./components/pages/Home";
+import ContactUs from "./components/pages/ContactUs";
+import ProductDetails from "./components/pages/ProductDetails";
+import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import Authform from "./components/Auth/Authform";
 
 function App() {
   return (
-    <RouterProvider router={router}></RouterProvider>
-    /* <Footer /> */
+    <Root>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/product">
+          <Product />
+        </Route>
+        <Route path="/contactUs">
+          <ContactUs />
+        </Route>
+        <Route path="/AboutUs">
+          <AboutUs />
+        </Route>
+        <Route path="/auth">
+          <Authform />
+        </Route>
+        <Route path="/product/:productId">
+          <ProductDetails />
+        </Route>
+      </Switch>
+    </Root>
   );
 }
 

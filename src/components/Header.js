@@ -1,46 +1,66 @@
 import React from "react";
-import { Badge, Container, Dropdown, Nav, Navbar } from "react-bootstrap";
+import {
+  Badge,
+  Button,
+  Container,
+  Dropdown,
+  Nav,
+  Navbar,
+} from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { CartContext } from "../context/Context";
 import CartPro from "./CartPro";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "./context/Context";
 
 const Header = () => {
   const {
     state: { cart },
   } = CartContext();
 
+  const authCtx = AuthContext();
+  console.log(authCtx);
+
   return (
     <>
-      <Navbar style={{ backgroundColor: "#e6e5e5" }} data-bs-theme="light">
-        <Container className="d-flex justify-content-around font-weight-bolder">
+      <Navbar style={{ backgroundColor: "black" }} data-bs-theme="light">
+        <Navbar.Brand
+          className="d-flex justify-content-center"
+          style={{ height: "3rem" }}
+        >
+          <NavLink to="/home">Ecom Store</NavLink>
+        </Navbar.Brand>
+        <Container className="d-flex justify-content-end font-weight-bolder">
           <Nav style={{ fontSize: "1.2rem" }}>
             <NavLink to="/home">Home</NavLink>
-            <NavLink to="/store">Store</NavLink>
-            <NavLink to="/contactus">Contact US </NavLink>
+            {authCtx.isUserLoggedIn && <NavLink to="/product">Store</NavLink>}
+
+            <NavLink to="/contactUs">Contact US </NavLink>
             <NavLink to="/AboutUs">About Us</NavLink>
           </Nav>
-          <Dropdown>
+          {!authCtx.isUserLoggedIn ? (
+            <NavLink to="/auth">
+              <Button style={{ margin: "0px 0px 0px 6rem" }}>Login</Button>
+            </NavLink>
+          ) : (
+            <Button style={{ margin: "0px 0px 0px 6rem" }} onClick={() => {}}>
+              LogOut
+            </Button>
+          )}
+
+          <Dropdown style={{ margin: "0px 4rem 0px 1rem" }}>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               <FaShoppingCart color="white" />
               <Badge>{cart.length}</Badge>
             </Dropdown.Toggle>
             <Dropdown.Menu
-              style={{ height: "40rem", minWidth: 450, left: "-69px" }}
+              style={{ height: "35rem", minWidth: 450, left: "-19rem" }}
             >
               <CartPro></CartPro>
             </Dropdown.Menu>
           </Dropdown>
         </Container>
       </Navbar>
-      <div
-        className="bg-dark d-flex justify-content-center"
-        style={{ height: "7rem", width: "100%" }}
-      >
-        <h1 style={{ margin: "auto", fontSize: "60px", color: "white" }}>
-          The Generics
-        </h1>
-      </div>
     </>
   );
 };
