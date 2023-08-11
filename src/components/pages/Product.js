@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { Row, Button, Card, Col } from "react-bootstrap";
 import { CartContext } from "../../context/Context";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/Context";
+import CartPro from "../CartPro";
 
 const Product = () => {
-  const { dispatch } = CartContext();
-  // const authCtx = AuthContext();
+  const { state, dispatch } = CartContext();
+
+  const authCtx = AuthContext();
+  const id = authCtx.email;
+  console.log(id);
 
   const productsArr = [
     {
@@ -42,6 +46,27 @@ const Product = () => {
     },
   ];
 
+  const dataStoring = async (obj) => {
+    const existingItem = state.cart.findIndex((ele) => ele.id === obj.id);
+
+    if (existingItem === -1) {
+      try {
+        await fetch(
+          `https://auth-app-ff8fe-default-rtdb.firebaseio.com/${id}.json`,
+          {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
+
   const prodArr = (
     <div className="container">
       <div
@@ -67,6 +92,7 @@ const Product = () => {
                     variant="primary"
                     onClick={() => {
                       dispatch({ type: "ADD_TO_CART", payload: item });
+                      dataStoring(item);
                     }}
                   >
                     Add TO Cart

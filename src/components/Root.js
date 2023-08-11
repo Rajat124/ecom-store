@@ -6,7 +6,7 @@ const Root = (props) => {
   return (
     <Fragment>
       <Header />
-      <main>{props.children}</main>
+      <main style={{ minHeight: "100%" }}>{props.children}</main>
       <Footer />
     </Fragment>
   );

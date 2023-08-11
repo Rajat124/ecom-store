@@ -38,13 +38,13 @@ const Home = () => {
 
   return (
     <div>
-      <div className="bg-dark " style={{ height: "10rem", width: "100%" }}>
+      <div className="bg-dark " style={{ height: "15rem", width: "100%" }}>
         <Row md={2} className="justify-content-md-center">
           <Button
             style={{
-              margin: "2rem 0 5px 5px",
+              margin: "2rem 0 0 5px",
               width: 300,
-              fontSize: "20px",
+              fontSize: "30px",
               background: "transparent",
             }}
           >
@@ -53,7 +53,13 @@ const Home = () => {
         </Row>
         <Row md={2} className="justify-content-md-center">
           <Button
-            style={{ width: 300, fontSize: "20px", background: "transparent" }}
+            style={{
+              margin: "0 0 5px 5px",
+              width: 300,
+              fontSize: "5rem",
+              background: "transparent",
+              border: "none",
+            }}
           >
             <AiFillPlayCircle />
           </Button>

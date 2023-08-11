@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import Root from "./components/Root";
 import Product from "./components/pages/Product";
 import AboutUs from "./components/pages/AboutUs";
@@ -12,6 +12,7 @@ import {
 } from "react-router-dom/cjs/react-router-dom.min";
 import Authform from "./components/Auth/Authform";
 import { AuthContext } from "./components/context/Context";
+// import { CartContext } from "./context/Context";
 
 function App() {
   const authCtx = AuthContext();

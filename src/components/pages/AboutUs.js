@@ -1,5 +1,7 @@
 import React from "react";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link, Route } from "react-router-dom";
+import photo from "../assests/photo.jpg";
 
 const AboutUs = () => {
   return (
@@ -12,33 +14,64 @@ const AboutUs = () => {
           About Us
         </h1>
       </div>
-      <div
-        className="container"
-        style={{ minWidth: 100, fontFamily: "cursive" }}
-      >
-        <p>
-          Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
-          sorrows, hates no prosecutors will unfold in the enduring of which
-          were born in it? Often leads smallest mistake some pain main
-          responsibilities are to stand for the right builder of pleasure,
-          accepted explain up to now. , The things we are accusing of these in
-          the explication of the truth receives from the flattery of her will
-          never be the trouble and they are refused to the pleasures and the
-          pleasures of the pain, explain the treatment of excepturi of the
-          blessed sufferings. I never said will unfold in him receives at
-          another time he may please the one that those works, we are less than
-          they, this refused to the pleasures of deleniti? Those are! Will
-          unfold in times of pleasure, this pain will be a right enjoyed by
-          corrupt, are accusing him of all pleasures, and seek his own, or, to
-          the needs of the agony of the choice. We hate the fellow. Lorem ipsum
-          dolor, sit amet consectetur rebates. The distinction, that arise from
-          or to. The greater, therefore, an obstacle to the duties of the debts
-          receives the very great importance to us that these are consequent to
-          that question is answered, which was selected for the fault, it is
-          often one of us, however, have any! Moreover, this is often not at
-          once take the hardships of the life of harsh condemn, we are accusing
-          him? Him whom something large cisterns.
-        </p>
+      <div className="row">
+        <div
+          className="col-lg-4 col-md-12 col-12"
+          style={{ margin: "10px 22px auto 53px", fontFamily: "cursive" }}
+        >
+          <img src={photo} alt="musicImg" style={{ height: "350px" }} />
+        </div>
+        <div
+          class="col-lg-8 col-md-12 col-12"
+          style={{ width: "54%", fontFamily: "cursive" }}
+        >
+          <p class="about-text1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p
+            class="about-text2"
+            style={{ fontFamily: "cursive", margin: "2rem 6rem 2rem 3rem" }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import { useHistory } from "react-router-dom";
 
 const Auth = React.createContext();
@@ -10,17 +10,27 @@ export const AuthContext = () => {
 const AContext = (props) => {
   const intialtokenValue = localStorage.getItem("token");
   const [token, setToken] = useState(intialtokenValue);
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    setEmail(localStorage.getItem("id"));
+  }, []);
 
   const userIsLoggedIn = !!token;
 
-  const loginHandler = (token) => {
+  const loginHandler = (token, email) => {
     setToken(token);
     localStorage.setItem("token", token);
+    let id = email.replace(/[@.]/g, "");
+    localStorage.setItem("id", id);
+    setEmail(id);
   };
+  // console.log(email);
 
   const logoutHandler = () => {
     setToken(null);
     localStorage.removeItem("token");
+    localStorage.removeItem("id");
   };
 
   let contextValue = {
@@ -28,6 +38,7 @@ const AContext = (props) => {
     isUserLoggedIn: userIsLoggedIn,
     login: loginHandler,
     logout: logoutHandler,
+    email: email,
   };
 
   return <Auth.Provider value={contextValue}>{props.children}</Auth.Provider>;

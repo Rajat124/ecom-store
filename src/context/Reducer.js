@@ -35,6 +35,12 @@ export const cartReducer = (state, action) => {
         cart: [...state.cart],
       };
 
+    case "USER_REFRESHED":
+      return {
+        ...state,
+        cart: [...action.payload],
+      };
+
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { CartContext } from "../context/Context";
 import {
   Col,
@@ -9,6 +9,7 @@ import {
   Row,
   Button,
 } from "react-bootstrap";
+import { AuthContext } from "./context/Context";
 
 const CartPro = () => {
   const {
@@ -16,16 +17,37 @@ const CartPro = () => {
     dispatch,
   } = CartContext();
 
-  // console.log(cart);
+  const authCtx = AuthContext();
+  const id = authCtx.email;
+  console.log(id);
 
-  // useEffect(() => {
-  //   const totalCartValue = cart.reduce(
-  //     (acc, curr) => acc + Number(curr.price),
-  //     0
-  //   );
+  const fetchmethod = useCallback(async () => {
+    let cartitem = [];
+    try {
+      const res = await fetch(
+        `https://auth-app-ff8fe-default-rtdb.firebaseio.com/${id}.json`
+      );
 
-  //   dispatch();
-  // }, [cart]);
+      const data = await res.json();
+
+      for (const key in data) {
+        cartitem.push({
+          id: data[key].id,
+          imageUrl: data[key].imageUrl,
+          price: data[key].price,
+          title: data[key].title,
+        });
+      }
+      console.log(cartitem);
+    } catch (error) {
+      console.log(error.message);
+    }
+    dispatch({ type: "USER_REFRESHED", payload: cartitem });
+  }, []);
+
+  useEffect(() => {
+    fetchmethod();
+  }, [fetchmethod]);
 
   return (
     <div>
