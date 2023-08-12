@@ -4,7 +4,6 @@ import { CartContext } from "../../context/Context";
 import { Link } from "react-router-dom";
 
 let id = localStorage.getItem("id");
-console.log(id);
 
 const Product = () => {
   const { state, dispatch } = CartContext();

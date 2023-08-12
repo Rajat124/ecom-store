@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import { CartContext } from "../context/Context";
 
 let id = localStorage.getItem("id");
+console.log(id);
 
 const Root = (props) => {
   const { dispatch } = CartContext();
@@ -31,7 +32,7 @@ const Root = (props) => {
       console.log(error.message);
     }
     dispatch({ type: "USER_REFRESHED", payload: cartitem });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetchmethod();
