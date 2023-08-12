@@ -1,6 +1,4 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-import { Link, Route } from "react-router-dom";
 import photo from "../assests/photo.jpg";
 
 const AboutUs = () => {
@@ -22,10 +20,10 @@ const AboutUs = () => {
           <img src={photo} alt="musicImg" style={{ height: "350px" }} />
         </div>
         <div
-          class="col-lg-8 col-md-12 col-12"
+          className="col-lg-8 col-md-12 col-12"
           style={{ width: "54%", fontFamily: "cursive" }}
         >
-          <p class="about-text1">
+          <p className="about-text1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -50,10 +48,10 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
+      <div className="row">
+        <div className="col">
           <p
-            class="about-text2"
+            className="about-text2"
             style={{ fontFamily: "cursive", margin: "2rem 6rem 2rem 3rem" }}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

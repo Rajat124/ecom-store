@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import { CartContext } from "../context/Context";
 import {
   Col,
@@ -9,7 +9,8 @@ import {
   Row,
   Button,
 } from "react-bootstrap";
-import { AuthContext } from "./context/Context";
+
+let id = localStorage.getItem("id");
 
 const CartPro = () => {
   const {
@@ -17,37 +18,14 @@ const CartPro = () => {
     dispatch,
   } = CartContext();
 
-  const authCtx = AuthContext();
-  const id = authCtx.email;
-  console.log(id);
-
-  const fetchmethod = useCallback(async () => {
-    let cartitem = [];
-    try {
-      const res = await fetch(
-        `https://auth-app-ff8fe-default-rtdb.firebaseio.com/${id}.json`
-      );
-
-      const data = await res.json();
-
-      for (const key in data) {
-        cartitem.push({
-          id: data[key].id,
-          imageUrl: data[key].imageUrl,
-          price: data[key].price,
-          title: data[key].title,
-        });
+  const deleteFechfunction = (itemId) => {
+    fetch(
+      `https://auth-app-ff8fe-default-rtdb.firebaseio.com/${id}/${itemId}.json`,
+      {
+        method: "DELETE",
       }
-      console.log(cartitem);
-    } catch (error) {
-      console.log(error.message);
-    }
-    dispatch({ type: "USER_REFRESHED", payload: cartitem });
-  }, []);
-
-  useEffect(() => {
-    fetchmethod();
-  }, [fetchmethod]);
+    );
+  };
 
   return (
     <div>
@@ -88,6 +66,7 @@ const CartPro = () => {
                   variant="danger"
                   onClick={() => {
                     dispatch({ type: "REMOVE_FROM_CART", payload: item });
+                    deleteFechfunction(item.cryticid);
                   }}
                 >
                   Remove

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import Root from "./components/Root";
 import Product from "./components/pages/Product";
 import AboutUs from "./components/pages/AboutUs";
@@ -12,7 +12,6 @@ import {
 } from "react-router-dom/cjs/react-router-dom.min";
 import Authform from "./components/Auth/Authform";
 import { AuthContext } from "./components/context/Context";
-// import { CartContext } from "./context/Context";
 
 function App() {
   const authCtx = AuthContext();
@@ -26,7 +25,8 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/product">
+        <Route path="/product" exact>
+          <Product />
           {authCtx.isUserLoggedIn && <Product />}
           {!authCtx.isUserLoggedIn && <Redirect to="/auth" />}
         </Route>
@@ -37,6 +37,7 @@ function App() {
           <AboutUs />
         </Route>
         <Route path="/auth">
+          <Authform />
           {!authCtx.isUserLoggedIn && <Authform />}
           {authCtx.isUserLoggedIn && <Redirect to="/product" />}
         </Route>

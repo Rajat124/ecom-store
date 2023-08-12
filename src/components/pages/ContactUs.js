@@ -36,7 +36,7 @@ const ContactUs = () => {
 
   return (
     <Container>
-      <div class="pb-4 card-body">
+      <div className="pb-4 card-body">
         <div
           className="bg-light d-flex justify-content-center p-2 font-monospace"
           style={{ height: "5rem", width: "100%" }}

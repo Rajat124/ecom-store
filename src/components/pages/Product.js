@@ -1,16 +1,13 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import { Row, Button, Card, Col } from "react-bootstrap";
 import { CartContext } from "../../context/Context";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../context/Context";
-import CartPro from "../CartPro";
+
+let id = localStorage.getItem("id");
+console.log(id);
 
 const Product = () => {
   const { state, dispatch } = CartContext();
-
-  const authCtx = AuthContext();
-  const id = authCtx.email;
-  console.log(id);
 
   const productsArr = [
     {
