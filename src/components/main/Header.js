@@ -8,10 +8,10 @@ import {
   Navbar,
 } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
-import { CartContext } from "../context/Context";
+import { CartContext } from "../../context/Context";
 import CartPro from "./CartPro";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "./context/Context";
+import { AuthContext } from "../../context/AContext";
 
 const Header = () => {
   const {

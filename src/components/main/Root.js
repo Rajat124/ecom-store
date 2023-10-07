@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import { CartContext } from "../context/Context";
+import { CartContext } from "../../context/Context";
 
 let id = localStorage.getItem("id");
 console.log(id);
@@ -22,12 +22,11 @@ const Root = (props) => {
         cartitem.push({
           cryticid: key,
           id: data[key].id,
-          imageUrl: data[key].imageUrl,
+          image: data[key].image,
           price: data[key].price,
           title: data[key].title,
         });
       }
-      console.log(cartitem);
     } catch (error) {
       console.log(error.message);
     }

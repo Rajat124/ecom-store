@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import Root from "./components/Root";
+import Root from "./components/main/Root";
 // import Product from "./components/pages/Product";
 // import AboutUs from "./components/pages/AboutUs";
 // import ContactUs from "./components/pages/ContactUs";
@@ -11,7 +11,7 @@ import {
   Switch,
 } from "react-router-dom/cjs/react-router-dom.min";
 import Authform from "./components/Auth/Authform";
-import { AuthContext } from "./components/context/Context";
+import { AuthContext } from "./context/AContext";
 import { Suspense } from "react";
 
 const ContactUs = lazy(() => import("./components/pages/ContactUs"));

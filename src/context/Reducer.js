@@ -1,8 +1,6 @@
 // import React from "react";
 
 export const cartReducer = (state, action) => {
-  // console.log(action.payload);
-
   switch (action.type) {
     case "ADD_TO_CART":
       const existingItem = state.cart.findIndex(

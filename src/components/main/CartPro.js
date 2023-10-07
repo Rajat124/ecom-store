@@ -1,5 +1,5 @@
 import React from "react";
-import { CartContext } from "../context/Context";
+import { CartContext } from "../../context/Context";
 import {
   Col,
   FormControl,
@@ -40,15 +40,10 @@ const CartPro = () => {
           <ListGroupItem key={item.id}>
             <Row>
               <Col md={2}>
-                <Image
-                  src={item.imageUrl}
-                  fluid
-                  roundedCircle
-                  // width="60px"
-                ></Image>
+                <Image src={item.image} fluid roundedCircle></Image>
               </Col>
               <Col md={2}>
-                <span>{item.title}</span>
+                <span>{item.title.slice(0, 10)}..</span>
               </Col>
               <Col md={3}>Rs.{item.price}</Col>
               <Col md={2}>

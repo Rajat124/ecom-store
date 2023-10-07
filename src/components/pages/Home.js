@@ -1,6 +1,7 @@
 import React from "react";
-import { Button, Col, ListGroup, Row } from "react-bootstrap";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { Button, Col, Image, ListGroup, Row } from "react-bootstrap";
+
+import FlashBanner from "../assests/FlashBanner.jpg";
 
 const Home = () => {
   const list = [
@@ -38,31 +39,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="bg-dark " style={{ height: "15rem", width: "100%" }}>
-        <Row md={2} className="justify-content-md-center">
-          <Button
-            style={{
-              margin: "2rem 0 0 5px",
-              width: 300,
-              fontSize: "30px",
-              background: "transparent",
-            }}
-          >
-            Get on Latest Album
-          </Button>
-        </Row>
-        <Row md={2} className="justify-content-md-center">
-          <Button
-            style={{
-              margin: "0 0 5px 5px",
-              width: 300,
-              fontSize: "5rem",
-              background: "transparent",
-              border: "none",
-            }}
-          >
-            <AiFillPlayCircle />
-          </Button>
+      <div className="bg-dark " style={{ margin: "auto", width: "70%" }}>
+        <Row className="justify-content-md-center">
+          <Image src={FlashBanner} sizes="" fluid />
         </Row>
       </div>
       <div
