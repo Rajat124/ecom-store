@@ -14,10 +14,10 @@ const Footer = () => {
               color: "white",
             }}
           >
-            The Generics
+            EcomKart
           </h1>
         </Col>
-        <Col>
+        <Col className="pd-8">
           <AiOutlineInstagram />
         </Col>
       </Row>

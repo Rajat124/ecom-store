@@ -13,11 +13,10 @@ import {
 import Authform from "./components/Auth/Authform";
 import { AuthContext } from "./context/AContext";
 import { Suspense } from "react";
-import StoreHome from "./components/pages/StoreHome";
 
 const ContactUs = lazy(() => import("./components/pages/ContactUs"));
 const AboutUs = lazy(() => import("./components/pages/AboutUs"));
-const Product = lazy(() => import("./components/pages/Product"));
+const StoreHome = lazy(() => import("./components/pages/StoreHome"));
 
 function App() {
   const authCtx = AuthContext();

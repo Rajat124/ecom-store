@@ -5,7 +5,7 @@ import { CartContext } from "../../../context/Context";
 
 const Filter = () => {
   const {
-    productState: { searchQuery, byStock, byFastDelivery, sort, byRating },
+    productState: { byRating },
     productDispatch,
   } = CartContext();
 

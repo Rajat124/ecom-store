@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "../assests/photo.jpg";
+import tech from "../assests/tech.png";
 
 const AboutUs = () => {
   return (
@@ -17,7 +17,7 @@ const AboutUs = () => {
           className="col-lg-4 col-md-12 col-12"
           style={{ margin: "10px 22px auto 53px", fontFamily: "cursive" }}
         >
-          <img src={photo} alt="musicImg" style={{ height: "350px" }} />
+          <img src={tech} alt="musicImg" style={{ height: "350px" }} />
         </div>
         <div
           className="col-lg-8 col-md-12 col-12"
