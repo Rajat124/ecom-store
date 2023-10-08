@@ -12,7 +12,7 @@ const EContext = (props) => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch("https://fakestoreapi.com/products?limit=20");
+      const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
       setProducts(data);
       console.log(data);

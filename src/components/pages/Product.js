@@ -7,8 +7,6 @@ import Rating from "./Filter/Rating";
 let id = localStorage.getItem("id");
 
 const Product = ({ item }) => {
-  console.log(item);
-
   const { state, dispatch } = CartContext();
 
   const dataStoring = async (obj) => {
@@ -47,10 +45,14 @@ const Product = ({ item }) => {
             <Card.Body>
               <Card.Title>{item.title.slice(0, 18)}...</Card.Title>
               <Card.Subtitle style={{ paddingBottom: 10 }}>
-                <span>₹ {Math.floor(item.price)}/-</span>
+                <div>₹ {Math.floor(item.price)}/-</div>
                 <Rating rating={item.rating.rate} />
+                <div>
+                  {item.price >= 80 ? "Fast Delivery" : "No Fast Delivery"}
+                </div>
+                <div>Stock: {Math.floor(item.rating.count)} Units Only</div>
               </Card.Subtitle>
-              <Row md={2}>
+              <Row>
                 <Button
                   variant="primary"
                   onClick={() => {

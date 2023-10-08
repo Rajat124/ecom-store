@@ -14,6 +14,20 @@ const Filter = () => {
       <div className="filters">
         <span className="title">Filter Products</span>
         <span>
+          <Form.Control
+            inline
+            label="Search"
+            placeholder="Search Product"
+            type="text"
+            onChange={(e) =>
+              productDispatch({
+                type: "FILTER_BY_SEARCH",
+                payload: e.target.value,
+              })
+            }
+          />
+        </span>
+        <span>
           <Form.Check
             inline
             label="Ascending"
@@ -48,7 +62,7 @@ const Filter = () => {
         <span>
           <Form.Check
             inline
-            label="Include Out of Stock"
+            label="Include All Stock"
             name="group1"
             type="checkbox"
             id={`inline-3`}
@@ -78,13 +92,13 @@ const Filter = () => {
         <span>
           <label style={{ paddingRight: 10 }}>Rating: </label>
           <Rating
-            // rating={byRating}
-            // onClick={(i) =>
-            //   productDispatch({
-            //     type: "FILTER_BY_RATING",
-            //     payload: i + 1,
-            //   })
-            // }
+            rating={byRating}
+            onClick={(i) =>
+              productDispatch({
+                type: "FILTER_BY_RATING",
+                payload: i + 1,
+              })
+            }
             style={{ cursor: "pointer" }}
           />
         </span>

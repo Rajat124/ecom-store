@@ -11,7 +11,11 @@ const StoreHome = () => {
   } = CartContext();
 
   const transFormProduct = () => {
-    let sortedProduct = products;
+    let sortedProduct = products.filter((prod) => prod.rating.count > 100);
+
+    if (byStock) {
+      sortedProduct = products;
+    }
 
     if (sort) {
       sortedProduct = sortedProduct.sort((a, b) =>
@@ -19,17 +23,19 @@ const StoreHome = () => {
       );
     }
 
-    if (!byStock) {
-      sortedProduct = sortedProduct.filter((prod) => prod.rating.count);
+    if (byFastDelivery) {
+      sortedProduct = sortedProduct.filter((prod) => prod.price > 80);
     }
 
     if (byRating) {
-      sortedProduct = sortedProduct.filter((prod) => prod.rating >= byRating);
+      sortedProduct = sortedProduct.filter(
+        (prod) => prod.rating.rate >= byRating
+      );
     }
 
     if (searchQuery) {
       sortedProduct = sortedProduct.filter((prod) =>
-        prod.name.toLowerCase().includes(searchQuery)
+        prod.title.toLowerCase().includes(searchQuery)
       );
     }
 

@@ -5,7 +5,7 @@ const Rating = ({ rating, onClick }) => {
   return (
     <span>
       {[...Array(5)].map((_, i) => (
-        <span key={i}>
+        <span key={i} onClick={() => onClick(i)}>
           {Math.floor(rating) > i ? (
             <AiFillStar fontSize="20px" />
           ) : (
