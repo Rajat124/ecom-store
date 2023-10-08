@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer, useState } from "react";
-import { cartReducer } from "./Reducer";
+import { cartReducer, productReducer } from "./Reducer";
 
 const cart = React.createContext();
 
@@ -25,8 +25,17 @@ const EContext = (props) => {
     cart: [],
   });
 
+  const [productState, productDispatch] = useReducer(productReducer, {
+    byStock: false,
+    byFastDelivery: false,
+    byRating: 0,
+    searchQuery: "",
+  });
+
   return (
-    <cart.Provider value={{ state, dispatch, products }}>
+    <cart.Provider
+      value={{ state, dispatch, products, productState, productDispatch }}
+    >
       {props.children}
     </cart.Provider>
   );

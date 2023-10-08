@@ -1,0 +1,31 @@
+.home {
+    display: flex;
+  }
+  
+  .filters {
+    background-color: #14171a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    margin: 10px;
+    height: 86vh;
+    border-radius: 10px;
+  }
+  
+  .filters > span {
+    padding-bottom: 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+  
+  .productContainer {
+    display: flex;
+    width: 78%;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
